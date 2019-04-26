@@ -22,7 +22,7 @@ flag =false;
   ngOnInit() {
     
      this.user.email= sessionStorage.getItem('email')
-  	this.userService.getMesssges(this.user)
+  	this.userService.getMessages(this.user)
       .subscribe( data => {
         this.chats = data;
       });
@@ -42,7 +42,7 @@ flag =false;
   sendmsg(): void {
     this.userService.sendmsg(this.chat)
         .subscribe( data => {
-         if(data.messege==="false")
+         if(data.message==="false")
         	{
             
               alert("user is not in your group");
