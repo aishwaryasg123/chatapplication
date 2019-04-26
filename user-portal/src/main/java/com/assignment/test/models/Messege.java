@@ -1,14 +1,14 @@
 package com.assignment.test.models;
 
-public class Messege {
-private String messege="authorized";
+public class Message {
+private String message;
 
-public String getMessege() {
-	return messege;
+public String getMessage() {
+	return message;
 }
 
-public void setMessege(String messege) {
-	this.messege = messege;
+public void setMessage(String message) {
+	this.message = message;
 }
 
 }
