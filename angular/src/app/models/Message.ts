@@ -1,5 +1,5 @@
 export class Messege {
 
-  messege: string;
+  message: string;
   
 }
