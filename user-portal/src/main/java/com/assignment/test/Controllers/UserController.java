@@ -8,7 +8,7 @@ import com.assignment.test.Services.UserService;
 import com.assignment.test.models.ChatInfo;
 import com.assignment.test.models.Group;
 import com.assignment.test.models.Login;
-import com.assignment.test.models.Messege;
+import com.assignment.test.models.Message;
 import com.assignment.test.models.User;
 
 import java.util.ArrayList;
@@ -34,15 +34,15 @@ public class UserController {
     }
     
     @PostMapping(path= {"/sendmsg"})
-    public Messege sendmsg(@RequestBody ChatInfo chat) {
-    	Messege msg=new Messege();
-    	msg.setMessege("false");
+    public Message sendmsg(@RequestBody ChatInfo chat) {
+    	Message msg=new Message();
+    	msg.setMessage("false");
     	Group fromuser=addTochatGroup.findByEmail(chat.getFromEmail());
     	Group touser=addTochatGroup.findByEmail(chat.getToEmail());
     	
     	if(fromuser.getGroupname().equals(touser.getGroupname())){
     		 chatrepository.create(chat);
-    		 msg.setMessege("true");
+    		 msg.setMessage("true");
     		 return msg;
     	}else
     	return msg;
