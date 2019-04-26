@@ -1,0 +1,65 @@
+<div class="col-md-6">
+  <h2 class="text-center">Send Messege</h2>
+<form>
+  <div class="form-group">
+    <label for="email">ToEmail address:</label>
+    <input type="email" [(ngModel)]="chat.toEmail" placeholder="toEmail" name="toEmail" class="form-control" id="toEmail">
+  </div>
+<div class="form-group">
+    <label for="email">FromEmail address:</label>
+    <input type="email" [(ngModel)]="chat.fromEmail" placeholder="fromEmail" name="fromEmail" class="form-control" id="fromEmail">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Enter Msg</label>
+    <input type="text" [(ngModel)]="chat.msg" placeholder="msg" name="msg" class="form-control" id="msg">
+  </div>
+  <button class="btn btn-success" (click)="sendmsg()">Send</button>
+</form>
+</div>
+
+
+<div class="col-md-6">
+<h2> Chat Details</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>FromEmail</th>
+    <td> </td>
+  <!--   <th>ToEmail</th> -->
+    <th>Messege</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let chat of chats">
+    <td>{{chat.fromEmail}}  </td> 
+    <td> </td>
+    <td> </td>
+  <!--   <td>{{chat.toEmail}}  </td> -->
+    <td>{{chat.msg}}  </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- <div *ngIf="flag">
+	<h4>user is not in user group</h4>
+</div>
+ -->
+
+<div class="col-md-6">
+<h2> Your Group Members</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of groupMembers">
+    <td>{{user.email}}</td>
+    <td>{{user.name}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
